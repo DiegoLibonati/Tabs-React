@@ -17,15 +17,15 @@ To call all the jobs, i use this API `https://course-api.com/react-tabs-project`
 
 ```
 const getJobs = async () => {
-const request = await fetch("https://course-api.com/react-tabs-project");
-const response = await request.json();
+  const request = await fetch("https://course-api.com/react-tabs-project");
+  const response = await request.json();
 
-setJobs(response);
-setLoading(false);
+  setJobs(response);
+  setLoading(false);
 };
 
 useEffect(() => {
-getJobs();
+  getJobs();
 }, []);
 ```
 
