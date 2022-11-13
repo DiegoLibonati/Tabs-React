@@ -28,7 +28,7 @@ I made a application page that through different tabs you can get different info
 
 ## Portfolio Link
 
-`https://diegolibonati.github.io/DiegoLibonatiWeb/#/projects?q=Tabs%20app%20page`
+`https://diegolibonati.github.io/DiegoLibonatiWeb/#/projects?q=Tabs%20App%20Page`
 
 ## Video
 
