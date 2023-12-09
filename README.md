@@ -16,19 +16,9 @@ I made a application page that through different tabs you can get different info
 1. React JS
 2. CSS3
 
-## Galery
-
-![Tabs-App-Page](https://raw.githubusercontent.com/DiegoLibonati/DiegoLibonatiWeb/main/data/projects/React/Imagenes/tabsreact-0.jpg)
-
-![Tabs-App-Page](https://raw.githubusercontent.com/DiegoLibonati/DiegoLibonatiWeb/main/data/projects/React/Imagenes/tabsreact-1.jpg)
-
-![Tabs-App-Page](https://raw.githubusercontent.com/DiegoLibonati/DiegoLibonatiWeb/main/data/projects/React/Imagenes/tabsreact-2.jpg)
-
-![Tabs-App-Page](https://raw.githubusercontent.com/DiegoLibonati/DiegoLibonatiWeb/main/data/projects/React/Imagenes/tabsreact-3.jpg)
-
 ## Portfolio Link
 
-`https://diegolibonati.github.io/DiegoLibonatiWeb/#/projects?q=Tabs%20App%20Page`
+[`https://www.diegolibonati.com.ar/#/project/77`](https://www.diegolibonati.com.ar/#/project/77)
 
 ## Video
 
