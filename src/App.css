@@ -92,6 +92,7 @@ body {
   border: none;
   color: #fff;
   margin-bottom: 2rem;
+  cursor: pointer;
   transition: background-color 1s, border 1s, color 1s;
 }
 
