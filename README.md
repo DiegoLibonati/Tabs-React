@@ -1,4 +1,4 @@
-# Tabs-App-Page
+# Tabs React
 
 ## Getting Started
 
@@ -19,7 +19,7 @@ I made a application page that through different tabs you can get different info
 
 ## Portfolio Link
 
-[`https://www.diegolibonati.com.ar/#/project/77`](https://www.diegolibonati.com.ar/#/project/77)
+[`https://www.diegolibonati.com.ar/#/project/Tabs-React`](https://www.diegolibonati.com.ar/#/project/Tabs-React)
 
 ## Video
 
