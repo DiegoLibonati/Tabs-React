@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Job } from "../entities/entities";
 
 import { CompanyExp } from "./CompanyExp";
 import { ButtonExp } from "./ButtonExp";
 
-import { useOpacity } from "../hooks/useOpacity";
+import { getTabs } from "../services/get/getTabs/getTabs";
 
 type JobState = {
   jobs: Job[];
@@ -19,15 +19,11 @@ export const Main = (): JSX.Element => {
     loading: false,
     activeJob: null,
   });
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  const { opacity, setOpacity } = useOpacity();
 
   const job = jobState.activeJob;
 
   const getJobs = async () => {
-    const request = await fetch("/react-tabs-project");
-    const data: Job[] = await request.json();
+    const data = await getTabs();
 
     setJobState((jobState) => ({
       ...jobState,
@@ -38,23 +34,13 @@ export const Main = (): JSX.Element => {
   };
 
   const handleCompany = (job: Job) => {
-    setOpacity(0);
-
-    timeoutRef.current = setTimeout(() => {
-      setOpacity(1);
-      setJobState((jobState) => ({ ...jobState, activeJob: job }));
-    }, 400);
+    setJobState((jobState) => ({ ...jobState, activeJob: job }));
   };
 
   useEffect(() => {
     setJobState((jobState) => ({ ...jobState, loading: true }));
     getJobs();
   }, []);
-
-  useEffect(() => {
-    if (!timeoutRef.current) return;
-    return () => clearTimeout(timeoutRef.current!);
-  }, [timeoutRef]);
 
   if (jobState.loading) {
     return (
@@ -88,7 +74,6 @@ export const Main = (): JSX.Element => {
           title={job?.title!}
           dates={job?.dates!}
           duties={job?.duties!}
-          opacity={opacity}
         ></CompanyExp>
       </section>
     </main>

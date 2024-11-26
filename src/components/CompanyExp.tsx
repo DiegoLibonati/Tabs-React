@@ -5,7 +5,6 @@ interface CompanyExpProps {
   title: string;
   dates: string;
   duties: string[];
-  opacity: number;
 }
 
 export const CompanyExp = ({
@@ -13,10 +12,9 @@ export const CompanyExp = ({
   title,
   dates,
   duties,
-  opacity,
 }: CompanyExpProps): JSX.Element => {
   return (
-    <article className="exp_container_info" style={{ opacity: opacity }}>
+    <article className="exp_container_info">
       <h2>{title}</h2>
       <h3>{company}</h3>
       <h4>{dates}</h4>

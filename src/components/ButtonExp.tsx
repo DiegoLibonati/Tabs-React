@@ -12,6 +12,7 @@ export const ButtonExp = ({
   return (
     <button
       className={`job-btn ${isActive && "active"}`}
+      aria-label="select company"
       onClick={handleActiveCompany}
     >
       {company}
