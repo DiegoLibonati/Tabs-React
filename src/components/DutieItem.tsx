@@ -1,5 +1,8 @@
 import { BsChevronBarRight } from "react-icons/bs";
-import { DutieItemProps } from "../entities/entities";
+
+interface DutieItemProps {
+  dutie: string;
+}
 
 export const DutieItem = ({ dutie }: DutieItemProps): JSX.Element => {
   return (

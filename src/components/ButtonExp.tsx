@@ -1,25 +1,18 @@
-import { ButtonExpProps } from "../entities/entities";
+interface ButtonExpProps {
+  company: string;
+  isActive: boolean;
+  handleActiveCompany: React.MouseEventHandler<HTMLButtonElement>;
+}
 
 export const ButtonExp = ({
   company,
-  index,
-  value,
-  setValue,
-  setOpacity,
+  isActive,
+  handleActiveCompany,
 }: ButtonExpProps): JSX.Element => {
-  const handleCompany: React.MouseEventHandler<HTMLButtonElement> = () => {
-    setOpacity(0);
-
-    setTimeout(() => {
-      setOpacity(1);
-      setValue(index);
-    }, 400);
-  };
-
   return (
     <button
-      className={`job-btn ${index === value && "active"}`}
-      onClick={(e) => handleCompany(e)}
+      className={`job-btn ${isActive && "active"}`}
+      onClick={handleActiveCompany}
     >
       {company}
     </button>
