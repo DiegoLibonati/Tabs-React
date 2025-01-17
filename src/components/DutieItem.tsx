@@ -6,7 +6,7 @@ interface DutieItemProps {
 
 export const DutieItem = ({ dutie }: DutieItemProps): JSX.Element => {
   return (
-    <li className="exp_container_info_duties_dutie">
+    <li className="experience__information__duties__dutie">
       <BsChevronBarRight fill="#09f"></BsChevronBarRight> {dutie}
     </li>
   );

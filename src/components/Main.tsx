@@ -44,21 +44,21 @@ export const Main = (): JSX.Element => {
 
   if (jobState.loading) {
     return (
-      <main className="main_container_loading">
+      <main className="main__spinner">
         <div className="spinner"></div>
       </main>
     );
   }
 
   return (
-    <main className="main_container">
-      <section className="exp_container">
-        <article className="exp_container_title">
+    <main className="main">
+      <section className="experience">
+        <article className="experience__title">
           <h2>Expierence</h2>
           <div></div>
         </article>
 
-        <article className="exp_container_btns">
+        <article className="experience__btns">
           {jobState.jobs.map((job) => (
             <ButtonExp
               key={job.id}

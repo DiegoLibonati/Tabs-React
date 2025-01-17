@@ -11,7 +11,7 @@ export const ButtonExp = ({
 }: ButtonExpProps): JSX.Element => {
   return (
     <button
-      className={`job-btn ${isActive && "active"}`}
+      className={`experience__btn ${isActive && "experience__btn--active"}`}
       aria-label="select company"
       onClick={handleActiveCompany}
     >

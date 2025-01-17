@@ -35,28 +35,32 @@ const renderComponent = (): RenderComponent => {
   };
 };
 
-test("It should render the article container, with its title, company, dates and list of duties.", () => {
-  const { props } = renderComponent();
+describe("CompanyExp.tsx", () => {
+  describe("General Tests.", () => {
+    test("It should render the article container, with its title, company, dates and list of duties.", () => {
+      const { props } = renderComponent();
 
-  const article = screen.getByRole("article");
-  const company = screen.getByRole("heading", { name: props.company });
-  const title = screen.getByRole("heading", { name: props.title });
-  const dates = screen.getByRole("heading", { name: props.dates });
-  const listDuties = screen.getByRole("list");
+      const article = screen.getByRole("article");
+      const company = screen.getByRole("heading", { name: props.company });
+      const title = screen.getByRole("heading", { name: props.title });
+      const dates = screen.getByRole("heading", { name: props.dates });
+      const listDuties = screen.getByRole("list");
 
-  expect(article).toBeInTheDocument();
-  expect(article).toHaveClass("exp_container_info");
-  expect(company).toBeInTheDocument();
-  expect(title).toBeInTheDocument();
-  expect(dates).toBeInTheDocument();
-  expect(listDuties).toBeInTheDocument();
-  expect(listDuties).toHaveClass("exp_container_info_duties");
-});
+      expect(article).toBeInTheDocument();
+      expect(article).toHaveClass("experience__information");
+      expect(company).toBeInTheDocument();
+      expect(title).toBeInTheDocument();
+      expect(dates).toBeInTheDocument();
+      expect(listDuties).toBeInTheDocument();
+      expect(listDuties).toHaveClass("experience__information__duties");
+    });
 
-test("It must render the totality of duties.", () => {
-  const { props } = renderComponent();
+    test("It must render the totality of duties.", () => {
+      const { props } = renderComponent();
 
-  const listItems = screen.getAllByRole("listitem");
+      const listItems = screen.getAllByRole("listitem");
 
-  expect(listItems).toHaveLength(props.duties.length);
+      expect(listItems).toHaveLength(props.duties.length);
+    });
+  });
 });

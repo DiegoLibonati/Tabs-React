@@ -22,12 +22,16 @@ const renderComponent = (): RenderComponent => {
   };
 };
 
-test("It must render a list item with its respective value passed through props.", () => {
-  const { props } = renderComponent();
+describe("DutieItem.tsx", () => {
+  describe("General Tests.", () => {
+    test("It must render a list item with its respective value passed through props.", () => {
+      const { props } = renderComponent();
 
-  const item = screen.getByRole("listitem");
+      const item = screen.getByRole("listitem");
 
-  expect(item).toBeInTheDocument();
-  expect(item).toHaveClass("exp_container_info_duties_dutie");
-  expect(item).toHaveTextContent(props.dutie);
+      expect(item).toBeInTheDocument();
+      expect(item).toHaveClass("experience__information__duties__dutie");
+      expect(item).toHaveTextContent(props.dutie);
+    });
+  });
 });
