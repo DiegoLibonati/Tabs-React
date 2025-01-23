@@ -1,0 +1,18 @@
+.button-exp {
+  padding: 1rem;
+  font-size: 1.5rem;
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  border: none;
+  color: var(--white-color);
+  margin-bottom: 2rem;
+  cursor: pointer;
+  transition: background-color 1s, border 1s, color 1s;
+}
+
+.button-exp--active {
+  background-color: var(--white-color);
+  border: 0.1rem solid var(--primary-color);
+  color: var(--black-color);
+  transition: background-color 1s, border 1s, color 1s;
+}

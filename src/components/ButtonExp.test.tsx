@@ -41,7 +41,7 @@ const renderComponent = ({
 
 describe("ButtonExp.tsx", () => {
   describe("General Tests.", () => {
-    test("It must render the button with the 'experience__btn' class with the company entered by props.", () => {
+    test("It must render the button with the 'button-exp' class with the company entered by props.", () => {
       const { props } = renderComponent({ isActive: false });
 
       const button = screen.getByRole("button", {
@@ -49,29 +49,29 @@ describe("ButtonExp.tsx", () => {
       });
 
       expect(button).toBeInTheDocument();
-      expect(button).toHaveClass("experience__btn");
-      expect(button).not.toHaveClass("experience__btn--active");
+      expect(button).toHaveClass("button-exp");
+      expect(button).not.toHaveClass("button-exp--active");
       expect(button).toHaveTextContent(props.company);
     });
 
-    test("It must render the component without it being experience__btn--active.", () => {
+    test("It must render the component without it being button-exp--active.", () => {
       renderComponent({ isActive: false });
 
       const button = screen.getByRole("button", {
         name: /select company/i,
       });
 
-      expect(button).not.toHaveClass("experience__btn--active");
+      expect(button).not.toHaveClass("button-exp--active");
     });
 
-    test("It must render the component while it is experience__btn--active.", () => {
+    test("It must render the component while it is button-exp--active.", () => {
       renderComponent({ isActive: true });
 
       const button = screen.getByRole("button", {
         name: /select company/i,
       });
 
-      expect(button).toHaveClass("experience__btn--active");
+      expect(button).toHaveClass("button-exp--active");
     });
 
     test("It must execute the function 'handleActiveCompany' when clicked.", async () => {

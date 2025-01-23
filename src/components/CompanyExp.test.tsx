@@ -47,12 +47,12 @@ describe("CompanyExp.tsx", () => {
       const listDuties = screen.getByRole("list");
 
       expect(article).toBeInTheDocument();
-      expect(article).toHaveClass("experience__information");
+      expect(article).toHaveClass("company-exp");
       expect(company).toBeInTheDocument();
       expect(title).toBeInTheDocument();
       expect(dates).toBeInTheDocument();
       expect(listDuties).toBeInTheDocument();
-      expect(listDuties).toHaveClass("experience__information__duties");
+      expect(listDuties).toHaveClass("company-exp__duties");
     });
 
     test("It must render the totality of duties.", () => {

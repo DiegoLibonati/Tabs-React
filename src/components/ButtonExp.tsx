@@ -1,3 +1,5 @@
+import "./ButtonExp.css";
+
 interface ButtonExpProps {
   company: string;
   isActive: boolean;
@@ -11,7 +13,7 @@ export const ButtonExp = ({
 }: ButtonExpProps): JSX.Element => {
   return (
     <button
-      className={`experience__btn ${isActive && "experience__btn--active"}`}
+      className={`button-exp ${isActive && "button-exp--active"}`}
       aria-label="select company"
       onClick={handleActiveCompany}
     >

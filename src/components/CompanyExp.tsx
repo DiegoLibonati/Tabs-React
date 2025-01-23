@@ -1,5 +1,7 @@
 import { DutieItem } from "./DutieItem";
 
+import "./CompanyExp.css";
+
 interface CompanyExpProps {
   company: string;
   title: string;
@@ -14,12 +16,12 @@ export const CompanyExp = ({
   duties,
 }: CompanyExpProps): JSX.Element => {
   return (
-    <article className="experience__information">
-      <h2>{title}</h2>
-      <h3>{company}</h3>
-      <h4>{dates}</h4>
+    <article className="company-exp">
+      <h2 className="company-exp__title">{title}</h2>
+      <h3 className="company-exp__company">{company}</h3>
+      <h4 className="company-exp__dates">{dates}</h4>
 
-      <ul className="experience__information__duties">
+      <ul className="company-exp__duties">
         {duties?.map((dutie, index) => (
           <DutieItem key={index * 1000} dutie={dutie}></DutieItem>
         ))}

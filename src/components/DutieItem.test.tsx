@@ -30,7 +30,7 @@ describe("DutieItem.tsx", () => {
       const item = screen.getByRole("listitem");
 
       expect(item).toBeInTheDocument();
-      expect(item).toHaveClass("experience__information__duties__dutie");
+      expect(item).toHaveClass("dutie-item");
       expect(item).toHaveTextContent(props.dutie);
     });
   });

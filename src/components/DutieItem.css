@@ -1,0 +1,12 @@
+.dutie-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.dutie-item__icon-chevron-right {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}

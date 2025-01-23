@@ -48,7 +48,7 @@ describe("Main.tsx", () => {
       const spinner = container.querySelector(".spinner");
 
       expect(main).toBeInTheDocument();
-      expect(main).toHaveClass("main__spinner");
+      expect(main).toHaveClass("main-spinner");
       expect(spinner).toBeInTheDocument();
       expect(spinner).toHaveClass("spinner");
     });
@@ -63,12 +63,12 @@ describe("Main.tsx", () => {
       });
 
       expect(main).toBeInTheDocument();
-      expect(main).toHaveClass("main");
+      expect(main).toHaveClass("main-app");
       expect(titleApp).toBeInTheDocument();
       expect(buttons).toHaveLength(TabsTests.length);
     });
 
-    test("It should be only one experience__btn--active button.", async () => {
+    test("It should be only one button-exp--active button.", async () => {
       await asyncRenderComponent();
 
       const buttons = screen.getAllByRole("button", {
@@ -76,13 +76,13 @@ describe("Main.tsx", () => {
       });
 
       const activeButton = buttons.filter((button) =>
-        button.classList.contains("experience__btn--active")
+        button.classList.contains("button-exp--active")
       );
 
       expect(activeButton).toHaveLength(1);
     });
 
-    test("It must change the experience__btn--active company when you click on a button other than the experience__btn--active one.", async () => {
+    test("It must change the button-exp--active company when you click on a button other than the button-exp--active one.", async () => {
       await asyncRenderComponent();
 
       const buttons = screen.getAllByRole("button", {
@@ -90,27 +90,27 @@ describe("Main.tsx", () => {
       });
 
       const activeButton = buttons.find((button) =>
-        button.classList.contains("experience__btn--active")
+        button.classList.contains("button-exp--active")
       );
 
       const notActiveButton = buttons.find(
-        (button) => !button.classList.contains("experience__btn--active")
+        (button) => !button.classList.contains("button-exp--active")
       );
 
       expect(activeButton).toBeInTheDocument();
       expect(notActiveButton).toBeInTheDocument();
-      expect(activeButton).toHaveClass("experience__btn--active");
-      expect(notActiveButton).not.toHaveClass("experience__btn--active");
+      expect(activeButton).toHaveClass("button-exp--active");
+      expect(notActiveButton).not.toHaveClass("button-exp--active");
 
       await user.click(notActiveButton!);
 
       expect(activeButton).toBeInTheDocument();
       expect(notActiveButton).toBeInTheDocument();
-      expect(activeButton).not.toHaveClass("experience__btn--active");
-      expect(notActiveButton).toHaveClass("experience__btn--active");
+      expect(activeButton).not.toHaveClass("button-exp--active");
+      expect(notActiveButton).toHaveClass("button-exp--active");
     });
 
-    test("It must render the experience__btn--active tab based on the current company.", async () => {
+    test("It must render the button-exp--active tab based on the current company.", async () => {
       await asyncRenderComponent();
 
       const buttons = screen.getAllByRole("button", {
@@ -118,7 +118,7 @@ describe("Main.tsx", () => {
       });
 
       const activeButton = buttons.find((button) =>
-        button.classList.contains("experience__btn--active")
+        button.classList.contains("button-exp--active")
       );
 
       expect(activeButton).toBeInTheDocument();

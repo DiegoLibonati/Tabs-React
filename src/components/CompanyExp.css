@@ -1,0 +1,49 @@
+.company-exp {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-flow: column wrap;
+  height: auto;
+  width: 100%;
+  transition: opacity 1s;
+}
+
+.company-exp__title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.company-exp__company {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  background-color: var(--primary-color);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  color: var(--white-color);
+}
+
+.company-exp__dates {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.company-exp__duties {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-flow: column wrap;
+  height: auto;
+  width: 100%;
+}
+
+@media only screen and (min-width: 1024px) {
+  .company-exp {
+    width: calc(100% - 30rem);
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .company-exp {
+    width: 100rem;
+  }
+}
