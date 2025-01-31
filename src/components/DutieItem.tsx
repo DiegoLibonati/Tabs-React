@@ -11,7 +11,7 @@ export const DutieItem = ({ dutie }: DutieItemProps): JSX.Element => {
     <li className="dutie-item">
       <BsChevronBarRight
         fill="#09f"
-        className="dutie-item__icon-chevron-right"
+        className="dutie-item__icon"
       ></BsChevronBarRight>{" "}
       {dutie}
     </li>

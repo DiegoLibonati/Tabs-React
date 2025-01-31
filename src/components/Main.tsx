@@ -54,8 +54,8 @@ export const Main = (): JSX.Element => {
     <main className="main-app">
       <section className="tabs">
         <article className="tabs__header">
-          <h2 className="tabs__header-title">Expierence</h2>
-          <div className="tabs__header-separator"></div>
+          <h2 className="tabs__title">Expierence</h2>
+          <div className="tabs__separator"></div>
         </article>
 
         <article className="tabs__btns">

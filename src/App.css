@@ -34,11 +34,11 @@
   height: 10rem;
 }
 
-.tabs__header-title {
+.tabs__title {
   font-size: 3rem;
 }
 
-.tabs__header-separator {
+.tabs__separator {
   width: 8rem;
   background-color: var(--primary-color);
   height: 0.5rem;
