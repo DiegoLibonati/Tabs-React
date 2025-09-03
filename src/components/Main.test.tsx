@@ -3,8 +3,8 @@ import user from "@testing-library/user-event";
 
 import { Main } from "./Main";
 
-import { createServer } from "../tests/msw/server";
-import { TabsTests } from "../tests/jest.constants";
+import { createServer } from "../../tests/msw/server";
+import { TabsTests } from "../../tests/jest.constants";
 
 type RenderComponent = {
   container: HTMLElement;
