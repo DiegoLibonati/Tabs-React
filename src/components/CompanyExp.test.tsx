@@ -1,6 +1,6 @@
 import { screen, render } from "@testing-library/react";
 
-import { CompanyExp } from "./CompanyExp";
+import { CompanyExp } from "@src/components/CompanyExp";
 
 type RenderComponent = {
   props: {

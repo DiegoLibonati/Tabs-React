@@ -1,6 +1,6 @@
 import { screen, render } from "@testing-library/react";
 
-import { DutieItem } from "./DutieItem";
+import { DutieItem } from "@src/components/DutieItem";
 
 type RenderComponent = {
   props: {

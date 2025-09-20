@@ -1,6 +1,6 @@
 import { BsChevronBarRight } from "react-icons/bs";
 
-import "./DutieItem.css";
+import "@src/components/DutieItem.css";
 
 interface DutieItemProps {
   dutie: string;

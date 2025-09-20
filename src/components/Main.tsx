@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
-import { Job } from "../entities/entities";
+import { Job } from "@src/entities/entities";
 
-import { CompanyExp } from "./CompanyExp";
-import { ButtonExp } from "./ButtonExp";
+import { CompanyExp } from "@src/components/CompanyExp";
+import { ButtonExp } from "@src/components/ButtonExp";
 
-import { getTabs } from "../services/get/getTabs/getTabs";
+import { getTabs } from "@src/services/get/getTabs/getTabs";
 
 type JobState = {
   jobs: Job[];

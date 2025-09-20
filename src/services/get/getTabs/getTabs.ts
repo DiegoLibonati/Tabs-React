@@ -1,4 +1,4 @@
-import { Job } from "../../../entities/entities";
+import { Job } from "@src/entities/entities";
 
 export const getTabs = async (): Promise<Job[]> => {
   const request = await fetch("/react-tabs-project");

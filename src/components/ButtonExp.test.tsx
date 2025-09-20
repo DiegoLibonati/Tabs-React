@@ -1,7 +1,7 @@
 import { screen, render } from "@testing-library/react";
 import user from "@testing-library/user-event";
 
-import { ButtonExp } from "./ButtonExp";
+import { ButtonExp } from "@src/components/ButtonExp";
 
 type RenderComponent = {
   props: {

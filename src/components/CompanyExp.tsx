@@ -1,6 +1,6 @@
-import { DutieItem } from "./DutieItem";
+import { DutieItem } from "@src/components/DutieItem";
 
-import "./CompanyExp.css";
+import "@src/components/CompanyExp.css";
 
 interface CompanyExpProps {
   company: string;

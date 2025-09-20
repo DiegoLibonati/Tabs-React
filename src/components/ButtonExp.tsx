@@ -1,4 +1,4 @@
-import "./ButtonExp.css";
+import "@src/components/ButtonExp.css";
 
 interface ButtonExpProps {
   company: string;
