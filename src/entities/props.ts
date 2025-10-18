@@ -1,6 +1,6 @@
 interface DefaultProps {
   className?: string;
-  children?: string;
+  children?: React.ReactNode;
 }
 
 export interface ButtonExpProps {
