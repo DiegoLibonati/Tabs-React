@@ -1,14 +1,12 @@
 import { screen, render } from "@testing-library/react";
 import user from "@testing-library/user-event";
 
-import { ButtonExp } from "@src/components/ButtonExp";
+import { ButtonExpProps } from "@src/entities/props";
+
+import { ButtonExp } from "@src/components/ButtonExp/ButtonExp";
 
 type RenderComponent = {
-  props: {
-    company: string;
-    isActive: boolean;
-    handleActiveCompany: jest.Mock;
-  };
+  props: { handleActiveCompany: jest.Mock } & ButtonExpProps;
   container: HTMLElement;
 };
 

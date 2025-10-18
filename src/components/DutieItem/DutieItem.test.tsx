@@ -1,11 +1,11 @@
 import { screen, render } from "@testing-library/react";
 
-import { DutieItem } from "@src/components/DutieItem";
+import { DutieItemProps } from "@src/entities/props";
+
+import { DutieItem } from "@src/components/DutieItem/DutieItem";
 
 type RenderComponent = {
-  props: {
-    dutie: string;
-  };
+  props: DutieItemProps;
   container: HTMLElement;
 };
 

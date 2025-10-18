@@ -1,13 +1,8 @@
-import { DutieItem } from "@src/components/DutieItem";
+import { DutieItem } from "@src/components/DutieItem/DutieItem";
 
-import "@src/components/CompanyExp.css";
+import { CompanyExpProps } from "@src/entities/props";
 
-interface CompanyExpProps {
-  company: string;
-  title: string;
-  dates: string;
-  duties: string[];
-}
+import "@src/components/CompanyExp/CompanyExp.css";
 
 export const CompanyExp = ({
   company,

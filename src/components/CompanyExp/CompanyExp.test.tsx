@@ -1,14 +1,11 @@
 import { screen, render } from "@testing-library/react";
 
-import { CompanyExp } from "@src/components/CompanyExp";
+import { CompanyExpProps } from "@src/entities/props";
+
+import { CompanyExp } from "@src/components/CompanyExp/CompanyExp";
 
 type RenderComponent = {
-  props: {
-    company: string;
-    title: string;
-    dates: string;
-    duties: string[];
-  };
+  props: CompanyExpProps;
   container: HTMLElement;
 };
 

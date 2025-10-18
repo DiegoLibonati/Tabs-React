@@ -1,7 +1,7 @@
 import { screen, render } from "@testing-library/react";
 import user from "@testing-library/user-event";
 
-import { Main } from "@src/components/Main";
+import { TabsPage } from "@src/pages/TabsPage/TabsPage";
 
 import { createServer } from "@tests/msw/server";
 import { TabsTests } from "@tests/jest.constants";
@@ -11,7 +11,7 @@ type RenderComponent = {
 };
 
 const renderComponent = (): RenderComponent => {
-  const { container } = render(<Main />);
+  const { container } = render(<TabsPage />);
 
   return {
     container: container,
@@ -19,7 +19,7 @@ const renderComponent = (): RenderComponent => {
 };
 
 const asyncRenderComponent = async (): Promise<RenderComponent> => {
-  const { container } = render(<Main />);
+  const { container } = render(<TabsPage />);
 
   await screen.findAllByRole("button", { name: /select company/i });
 
@@ -28,7 +28,7 @@ const asyncRenderComponent = async (): Promise<RenderComponent> => {
   };
 };
 
-describe("Main.tsx", () => {
+describe("TabsPage.tsx", () => {
   describe("General Tests.", () => {
     createServer([
       {
@@ -44,7 +44,6 @@ describe("Main.tsx", () => {
       const { container } = renderComponent();
 
       const main = screen.getByRole("main");
-      // eslint-disable-next-line
       const spinner = container.querySelector(".spinner");
 
       expect(main).toBeInTheDocument();

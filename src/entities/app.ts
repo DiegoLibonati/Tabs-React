@@ -1,5 +1,3 @@
-// ##### TYPES #####
-
 export type Job = {
   id: string;
   order: number;

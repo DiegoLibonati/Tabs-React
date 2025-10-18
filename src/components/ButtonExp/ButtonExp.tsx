@@ -1,10 +1,6 @@
-import "@src/components/ButtonExp.css";
+import { ButtonExpProps } from "@src/entities/props";
 
-interface ButtonExpProps {
-  company: string;
-  isActive: boolean;
-  handleActiveCompany: React.MouseEventHandler<HTMLButtonElement>;
-}
+import "@src/components/ButtonExp/ButtonExp.css";
 
 export const ButtonExp = ({
   company,

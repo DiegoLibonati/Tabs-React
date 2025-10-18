@@ -1,19 +1,16 @@
 import { useEffect, useState } from "react";
 
-import { Job } from "@src/entities/entities";
+import { Job } from "@src/entities/app";
+import { JobState } from "@src/entities/states";
 
-import { CompanyExp } from "@src/components/CompanyExp";
-import { ButtonExp } from "@src/components/ButtonExp";
+import { ButtonExp } from "@src/components/ButtonExp/ButtonExp";
+import { CompanyExp } from "@src/components/CompanyExp/CompanyExp";
 
-import { getTabs } from "@src/services/get/getTabs/getTabs";
+import { getTabs } from "@src/api/get/getTabs";
 
-type JobState = {
-  jobs: Job[];
-  activeJob: Job | null;
-  loading: boolean;
-};
+import "@src/pages/TabsPage/TabsPage.css";
 
-export const Main = (): JSX.Element => {
+export const TabsPage = () => {
   const [jobState, setJobState] = useState<JobState>({
     jobs: [],
     loading: false,
