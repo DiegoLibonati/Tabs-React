@@ -44,7 +44,7 @@ describe("TabsPage.tsx", () => {
       const { container } = renderComponent();
 
       const main = screen.getByRole("main");
-      const spinner = container.querySelector(".spinner");
+      const spinner = container.querySelector<HTMLDivElement>(".spinner");
 
       expect(main).toBeInTheDocument();
       expect(main).toHaveClass("main-spinner");
