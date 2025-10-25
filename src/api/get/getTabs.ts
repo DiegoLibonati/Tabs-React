@@ -1,6 +1,6 @@
-import { Job } from "@src/entities/app";
+import { GetTabsResponse } from "@src/entities/responses";
 
-export const getTabs = async (): Promise<Job[]> => {
+export const getTabs = async (): Promise<GetTabsResponse> => {
   try {
     const response = await fetch("/react-tabs-project");
 
@@ -8,7 +8,7 @@ export const getTabs = async (): Promise<Job[]> => {
       throw new Error("Error fetching tabs.");
     }
 
-    const data: Job[] = await response.json();
+    const data: GetTabsResponse = await response.json();
 
     return data;
   } catch (e) {
