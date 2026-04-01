@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 
-import { Job } from "@src/entities/app";
-import { JobState } from "@src/entities/states";
+import { Tab } from "@/types/app";
+import { JobState } from "@/types/states";
 
-import { ButtonExp } from "@src/components/ButtonExp/ButtonExp";
-import { CompanyExp } from "@src/components/CompanyExp/CompanyExp";
+import ButtonExp from "@/components/ButtonExp/ButtonExp";
+import CompanyExp from "@/components/CompanyExp/CompanyExp";
 
-import { getTabs } from "@src/api/get/getTabs";
+import { tabsService } from "@/services/tabsService";
 
-import "@src/pages/TabsPage/TabsPage.css";
+import "@/pages/TabsPage/TabsPage.css";
 
-export const TabsPage = () => {
+const TabsPage = () => {
   const [jobState, setJobState] = useState<JobState>({
     jobs: [],
     loading: false,
@@ -20,7 +20,7 @@ export const TabsPage = () => {
   const job = jobState.activeJob;
 
   const getJobs = async () => {
-    const data = await getTabs();
+    const data = await tabsService.getAll();
 
     setJobState((jobState) => ({
       ...jobState,
@@ -30,7 +30,7 @@ export const TabsPage = () => {
     }));
   };
 
-  const handleCompany = (job: Job) => {
+  const handleCompany = (job: Tab) => {
     setJobState((jobState) => ({ ...jobState, activeJob: job }));
   };
 
@@ -67,12 +67,14 @@ export const TabsPage = () => {
         </article>
 
         <CompanyExp
-          company={job?.company!}
-          title={job?.title!}
-          dates={job?.dates!}
-          duties={job?.duties!}
+          company={job?.company}
+          title={job?.title}
+          dates={job?.dates}
+          duties={job?.duties}
         ></CompanyExp>
       </section>
     </main>
   );
 };
+
+export default TabsPage;

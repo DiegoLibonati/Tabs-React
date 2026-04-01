@@ -1,4 +1,4 @@
-export const TabsTests = [
+export const mockTabs = [
   {
     id: "recAGJfiU4CeaV0HL",
     order: 3,

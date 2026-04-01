@@ -1,4 +1,4 @@
-export type Job = {
+export type Tab = {
   id: string;
   order: number;
   title: string;

@@ -1,15 +1,10 @@
-import { DutieItem } from "@src/components/DutieItem/DutieItem";
+import DutieItem from "@/components/DutieItem/DutieItem";
 
-import { CompanyExpProps } from "@src/entities/props";
+import { CompanyExpProps } from "@/types/props";
 
-import "@src/components/CompanyExp/CompanyExp.css";
+import "@/components/CompanyExp/CompanyExp.css";
 
-export const CompanyExp = ({
-  company,
-  title,
-  dates,
-  duties,
-}: CompanyExpProps): JSX.Element => {
+const CompanyExp = ({ company, title, dates, duties }: CompanyExpProps) => {
   return (
     <article className="company-exp">
       <h2 className="company-exp__title">{title}</h2>
@@ -24,3 +19,5 @@ export const CompanyExp = ({
     </article>
   );
 };
+
+export default CompanyExp;

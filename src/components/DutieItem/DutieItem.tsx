@@ -1,17 +1,15 @@
 import { BsChevronBarRight } from "react-icons/bs";
 
-import { DutieItemProps } from "@src/entities/props";
+import { DutieItemProps } from "@/types/props";
 
-import "@src/components/DutieItem/DutieItem.css";
+import "@/components/DutieItem/DutieItem.css";
 
-export const DutieItem = ({ dutie }: DutieItemProps): JSX.Element => {
+const DutieItem = ({ dutie }: DutieItemProps) => {
   return (
     <li className="dutie-item">
-      <BsChevronBarRight
-        fill="#09f"
-        className="dutie-item__icon"
-      ></BsChevronBarRight>{" "}
-      {dutie}
+      <BsChevronBarRight fill="#09f" className="dutie-item__icon"></BsChevronBarRight> {dutie}
     </li>
   );
 };
+
+export default DutieItem;

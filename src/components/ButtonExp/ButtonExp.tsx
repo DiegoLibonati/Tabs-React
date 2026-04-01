@@ -1,12 +1,8 @@
-import { ButtonExpProps } from "@src/entities/props";
+import { ButtonExpProps } from "@/types/props";
 
-import "@src/components/ButtonExp/ButtonExp.css";
+import "@/components/ButtonExp/ButtonExp.css";
 
-export const ButtonExp = ({
-  company,
-  isActive,
-  handleActiveCompany,
-}: ButtonExpProps): JSX.Element => {
+const ButtonExp = ({ company, isActive, handleActiveCompany }: ButtonExpProps) => {
   return (
     <button
       className={`button-exp ${isActive && "button-exp--active"}`}
@@ -17,3 +13,5 @@ export const ButtonExp = ({
     </button>
   );
 };
+
+export default ButtonExp;

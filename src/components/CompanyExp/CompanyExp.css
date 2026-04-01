@@ -16,10 +16,10 @@
 .company-exp__company {
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  background-color: var(--primary-color);
+  background-color: var(--color-primary);
   padding: 0.5rem;
   border-radius: 1rem;
-  color: var(--white-color);
+  color: var(--color-white);
 }
 
 .company-exp__dates {

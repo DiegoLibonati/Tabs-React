@@ -40,7 +40,7 @@
 
 .tabs__separator {
   width: 8rem;
-  background-color: var(--primary-color);
+  background-color: var(--color-primary);
   height: 0.5rem;
 }
 
@@ -53,11 +53,11 @@
 }
 
 .spinner {
-  border: 0.25rem solid rgba(var(--black-int-color), 0.1);
+  border: 0.25rem solid rgba(var(--color-black-rgb), 0.1);
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 50%;
-  border-left-color: var(--primary-color);
+  border-left-color: var(--color-primary);
 
   animation: spin 1s ease infinite;
 }
