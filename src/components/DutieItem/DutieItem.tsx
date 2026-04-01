@@ -7,7 +7,12 @@ import "@/components/DutieItem/DutieItem.css";
 const DutieItem = ({ dutie }: DutieItemProps) => {
   return (
     <li className="dutie-item">
-      <BsChevronBarRight fill="#09f" className="dutie-item__icon"></BsChevronBarRight> {dutie}
+      <BsChevronBarRight
+        fill="#09f"
+        className="dutie-item__icon"
+        aria-hidden="true"
+      ></BsChevronBarRight>
+      {dutie}
     </li>
   );
 };

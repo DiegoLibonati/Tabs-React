@@ -9,22 +9,22 @@
 }
 
 .company-exp__title {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  margin-bottom: 0.625rem;
 }
 
 .company-exp__company {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  margin-bottom: 0.625rem;
   background-color: var(--color-primary);
-  padding: 0.5rem;
-  border-radius: 1rem;
+  padding: 0.3125rem;
+  border-radius: 0.625rem;
   color: var(--color-white);
 }
 
 .company-exp__dates {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
+  font-size: 0.9375rem;
+  margin-bottom: 0.625rem;
 }
 
 .company-exp__duties {
@@ -38,12 +38,12 @@
 
 @media only screen and (min-width: 1024px) {
   .company-exp {
-    width: calc(100% - 30rem);
+    width: calc(100% - 18.75rem);
   }
 }
 
 @media only screen and (min-width: 1600px) {
   .company-exp {
-    width: 100rem;
+    width: 62.5rem;
   }
 }

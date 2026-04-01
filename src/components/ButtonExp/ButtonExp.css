@@ -1,11 +1,11 @@
 .button-exp {
-  padding: 1rem;
-  font-size: 1.5rem;
+  padding: 0.625rem;
+  font-size: 0.9375rem;
   background-color: var(--color-primary);
-  border-radius: 1rem;
+  border-radius: 0.625rem;
   border: none;
   color: var(--color-white);
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
   cursor: pointer;
   transition:
     background-color 1s,
@@ -15,7 +15,7 @@
 
 .button-exp--active {
   background-color: var(--color-white);
-  border: 0.1rem solid var(--color-primary);
+  border: 0.0625rem solid var(--color-primary);
   color: var(--color-black);
   transition:
     background-color 1s,

@@ -37,3 +37,5 @@ export const mockTabs = [
     company: "CUKER",
   },
 ];
+
+export const mockTab = mockTabs[0]!;

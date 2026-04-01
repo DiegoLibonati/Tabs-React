@@ -41,21 +41,21 @@ const TabsPage = () => {
 
   if (jobState.loading) {
     return (
-      <main className="main-spinner">
-        <div className="spinner"></div>
+      <main className="main-spinner" aria-busy="true" aria-label="Loading work experience data">
+        <div className="spinner" role="status" aria-label="Loading"></div>
       </main>
     );
   }
 
   return (
-    <main className="main-app">
-      <section className="tabs">
+    <main className="main-app" aria-label="Work experience">
+      <section className="tabs" aria-label="Work experience tabs">
         <article className="tabs__header">
           <h2 className="tabs__title">Expierence</h2>
           <div className="tabs__separator"></div>
         </article>
 
-        <article className="tabs__btns">
+        <article className="tabs__btns" role="tablist" aria-label="Work experience companies">
           {jobState.jobs.map((job) => (
             <ButtonExp
               key={job.id}
