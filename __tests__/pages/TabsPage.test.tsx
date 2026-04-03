@@ -7,13 +7,13 @@ import { tabsService } from "@/services/tabsService";
 
 import { mockTabs, mockTab } from "@tests/__mocks__/tabs.mock";
 
-jest.mock("@/services/tabsService");
-
-const mockedTabsService = tabsService as jest.Mocked<typeof tabsService>;
-
 type RenderPage = {
   container: HTMLElement;
 };
+
+jest.mock("@/services/tabsService");
+
+const mockedTabsService = tabsService as jest.Mocked<typeof tabsService>;
 
 const renderPage = (): RenderPage => {
   const { container } = render(<TabsPage />);

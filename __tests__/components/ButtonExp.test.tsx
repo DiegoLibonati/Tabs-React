@@ -11,12 +11,12 @@ type RenderComponent = {
 };
 
 const renderComponent = (overrides?: Partial<ButtonExpProps>): RenderComponent => {
-  const handleActiveCompany = jest.fn();
+  const mockHandleActiveCompany = jest.fn();
 
   const props: ButtonExpProps = {
     company: "TOMMY",
     isActive: false,
-    handleActiveCompany,
+    handleActiveCompany: mockHandleActiveCompany,
     ...overrides,
   };
 
@@ -67,19 +67,19 @@ describe("ButtonExp", () => {
   });
 
   it("should call handleActiveCompany when clicked", async () => {
-    const handleActiveCompany = jest.fn();
+    const mockHandleActiveCompany = jest.fn();
     const user = userEvent.setup();
 
-    renderComponent({ handleActiveCompany });
+    renderComponent({ handleActiveCompany: mockHandleActiveCompany });
 
     await user.click(screen.getByRole("tab"));
 
-    expect(handleActiveCompany).toHaveBeenCalledTimes(1);
+    expect(mockHandleActiveCompany).toHaveBeenCalledTimes(1);
   });
 
   it("should not call handleActiveCompany when not clicked", () => {
-    const handleActiveCompany = jest.fn();
-    renderComponent({ handleActiveCompany });
-    expect(handleActiveCompany).not.toHaveBeenCalled();
+    const mockHandleActiveCompany = jest.fn();
+    renderComponent({ handleActiveCompany: mockHandleActiveCompany });
+    expect(mockHandleActiveCompany).not.toHaveBeenCalled();
   });
 });
