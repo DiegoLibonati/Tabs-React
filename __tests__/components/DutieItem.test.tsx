@@ -25,6 +25,10 @@ const renderComponent = (overrides?: Partial<DutieItemProps>): RenderComponent =
 };
 
 describe("DutieItem", () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("should render a list item", () => {
     renderComponent();
     expect(screen.getByRole("listitem")).toBeInTheDocument();

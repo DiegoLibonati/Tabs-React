@@ -26,6 +26,10 @@ const renderComponent = (overrides?: Partial<CompanyExpProps>): RenderComponent 
 };
 
 describe("CompanyExp", () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("should render with role tabpanel", () => {
     renderComponent();
     expect(screen.getByRole("tabpanel")).toBeInTheDocument();

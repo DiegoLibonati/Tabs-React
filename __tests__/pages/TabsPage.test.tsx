@@ -11,9 +11,9 @@ type RenderPage = {
   container: HTMLElement;
 };
 
-const mockedTabsService = tabsService as jest.Mocked<typeof tabsService>;
-
 jest.mock("@/services/tabsService");
+
+const mockedTabsService = tabsService as jest.Mocked<typeof tabsService>;
 
 const renderPage = (): RenderPage => {
   const { container } = render(<TabsPage />);
@@ -21,6 +21,10 @@ const renderPage = (): RenderPage => {
 };
 
 describe("TabsPage", () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("should render the loading spinner while fetching", () => {
     mockedTabsService.getAll.mockReturnValueOnce(new Promise(() => undefined));
 

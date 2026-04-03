@@ -2,23 +2,29 @@ import { tabsService } from "@/services/tabsService";
 
 import { mockTabs } from "@tests/__mocks__/tabs.mock";
 
+const mockedFetch = fetch as jest.MockedFunction<typeof fetch>;
+
 describe("tabsService", () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("should call fetch with the correct endpoint", async () => {
-    (global.fetch as jest.Mock).mockResolvedValueOnce({
+    mockedFetch.mockResolvedValueOnce({
       ok: true,
       json: async () => mockTabs,
-    });
+    } as unknown as Response);
 
     await tabsService.getAll();
 
-    expect(global.fetch).toHaveBeenCalledWith("/react-tabs-project");
+    expect(mockedFetch).toHaveBeenCalledWith("/react-tabs-project");
   });
 
   it("should return the parsed Tab array on a successful response", async () => {
-    (global.fetch as jest.Mock).mockResolvedValueOnce({
+    mockedFetch.mockResolvedValueOnce({
       ok: true,
       json: async () => mockTabs,
-    });
+    } as unknown as Response);
 
     const result = await tabsService.getAll();
 
@@ -26,13 +32,13 @@ describe("tabsService", () => {
   });
 
   it("should throw an error when the response is not ok", async () => {
-    (global.fetch as jest.Mock).mockResolvedValueOnce({ ok: false, status: 500 });
+    mockedFetch.mockResolvedValueOnce({ ok: false, status: 500 } as unknown as Response);
 
     await expect(tabsService.getAll()).rejects.toThrow("HTTP error! status: 500");
   });
 
   it("should throw an error with the correct status code", async () => {
-    (global.fetch as jest.Mock).mockResolvedValueOnce({ ok: false, status: 404 });
+    mockedFetch.mockResolvedValueOnce({ ok: false, status: 404 } as unknown as Response);
 
     await expect(tabsService.getAll()).rejects.toThrow("HTTP error! status: 404");
   });

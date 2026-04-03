@@ -10,9 +10,9 @@ type RenderComponent = {
   props: ButtonExpProps;
 };
 
-const renderComponent = (overrides?: Partial<ButtonExpProps>): RenderComponent => {
-  const mockHandleActiveCompany = jest.fn();
+const mockHandleActiveCompany = jest.fn();
 
+const renderComponent = (overrides?: Partial<ButtonExpProps>): RenderComponent => {
   const props: ButtonExpProps = {
     company: "TOMMY",
     isActive: false,
@@ -26,6 +26,10 @@ const renderComponent = (overrides?: Partial<ButtonExpProps>): RenderComponent =
 };
 
 describe("ButtonExp", () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   it("should render an element with role tab", () => {
     renderComponent();
     expect(screen.getByRole("tab")).toBeInTheDocument();
