@@ -11,9 +11,9 @@ type RenderPage = {
   container: HTMLElement;
 };
 
-jest.mock("@/services/tabsService");
-
 const mockedTabsService = tabsService as jest.Mocked<typeof tabsService>;
+
+jest.mock("@/services/tabsService");
 
 const renderPage = (): RenderPage => {
   const { container } = render(<TabsPage />);
