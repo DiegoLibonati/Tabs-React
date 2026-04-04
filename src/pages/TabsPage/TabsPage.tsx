@@ -6,7 +6,7 @@ import { JobState } from "@/types/states";
 import ButtonExp from "@/components/ButtonExp/ButtonExp";
 import CompanyExp from "@/components/CompanyExp/CompanyExp";
 
-import { tabsService } from "@/services/tabsService";
+import tabService from "@/services/tabService";
 
 import "@/pages/TabsPage/TabsPage.css";
 
@@ -20,7 +20,7 @@ const TabsPage = () => {
   const job = jobState.activeJob;
 
   const getJobs = async () => {
-    const data = await tabsService.getAll();
+    const data = await tabService.getAll();
 
     setJobState((jobState) => ({
       ...jobState,

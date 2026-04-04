@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 
 import TabsPage from "@/pages/TabsPage/TabsPage";
 
-import { tabsService } from "@/services/tabsService";
+import tabService from "@/services/tabService";
 
 import { mockTabs, mockTab } from "@tests/__mocks__/tabs.mock";
 
@@ -11,9 +11,9 @@ type RenderPage = {
   container: HTMLElement;
 };
 
-jest.mock("@/services/tabsService");
+jest.mock("@/services/tabService");
 
-const mockedTabsService = tabsService as jest.Mocked<typeof tabsService>;
+const mockedTabService = tabService as jest.Mocked<typeof tabService>;
 
 const renderPage = (): RenderPage => {
   const { container } = render(<TabsPage />);
@@ -26,7 +26,7 @@ describe("TabsPage", () => {
   });
 
   it("should render the loading spinner while fetching", () => {
-    mockedTabsService.getAll.mockReturnValueOnce(new Promise(() => undefined));
+    mockedTabService.getAll.mockReturnValueOnce(new Promise(() => undefined));
 
     renderPage();
 
@@ -34,7 +34,7 @@ describe("TabsPage", () => {
   });
 
   it("should render the main element after fetch completes", async () => {
-    mockedTabsService.getAll.mockResolvedValueOnce(mockTabs);
+    mockedTabService.getAll.mockResolvedValueOnce(mockTabs);
 
     const { container } = renderPage();
 
@@ -43,7 +43,7 @@ describe("TabsPage", () => {
   });
 
   it("should render the tablist with the correct aria-label", async () => {
-    mockedTabsService.getAll.mockResolvedValueOnce(mockTabs);
+    mockedTabService.getAll.mockResolvedValueOnce(mockTabs);
 
     renderPage();
 
@@ -52,7 +52,7 @@ describe("TabsPage", () => {
   });
 
   it("should render a tab button for each job", async () => {
-    mockedTabsService.getAll.mockResolvedValueOnce(mockTabs);
+    mockedTabService.getAll.mockResolvedValueOnce(mockTabs);
 
     renderPage();
 
@@ -61,7 +61,7 @@ describe("TabsPage", () => {
   });
 
   it("should select the first job as active by default", async () => {
-    mockedTabsService.getAll.mockResolvedValueOnce(mockTabs);
+    mockedTabService.getAll.mockResolvedValueOnce(mockTabs);
 
     renderPage();
 
@@ -70,7 +70,7 @@ describe("TabsPage", () => {
   });
 
   it("should display the first job details in the tabpanel by default", async () => {
-    mockedTabsService.getAll.mockResolvedValueOnce(mockTabs);
+    mockedTabService.getAll.mockResolvedValueOnce(mockTabs);
 
     renderPage();
 
@@ -79,7 +79,7 @@ describe("TabsPage", () => {
   });
 
   it("should mark only the clicked tab as active", async () => {
-    mockedTabsService.getAll.mockResolvedValueOnce(mockTabs);
+    mockedTabService.getAll.mockResolvedValueOnce(mockTabs);
     const user = userEvent.setup();
 
     renderPage();
@@ -92,7 +92,7 @@ describe("TabsPage", () => {
   });
 
   it("should update the tabpanel content when a tab is clicked", async () => {
-    mockedTabsService.getAll.mockResolvedValueOnce(mockTabs);
+    mockedTabService.getAll.mockResolvedValueOnce(mockTabs);
     const user = userEvent.setup();
 
     renderPage();
@@ -106,12 +106,12 @@ describe("TabsPage", () => {
     );
   });
 
-  it("should call tabsService.getAll exactly once on mount", async () => {
-    mockedTabsService.getAll.mockResolvedValueOnce(mockTabs);
+  it("should call tabService.getAll exactly once on mount", async () => {
+    mockedTabService.getAll.mockResolvedValueOnce(mockTabs);
 
     renderPage();
 
     await screen.findAllByRole("tab");
-    expect(mockedTabsService.getAll).toHaveBeenCalledTimes(1);
+    expect(mockedTabService.getAll).toHaveBeenCalledTimes(1);
   });
 });

@@ -1,6 +1,6 @@
 import type { Tab } from "@/types/app";
 
-export const tabsService = {
+const tabService = {
   getAll: async (): Promise<Tab[]> => {
     const response = await fetch("/react-tabs-project");
 
@@ -11,3 +11,5 @@ export const tabsService = {
     return tabs;
   },
 };
+
+export default tabService;
