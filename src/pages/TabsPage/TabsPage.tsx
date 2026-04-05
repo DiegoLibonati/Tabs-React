@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 
-import { Tab } from "@/types/app";
-import { JobState } from "@/types/states";
+import type { JSX } from "react";
+import type { Tab } from "@/types/app";
+import type { JobState } from "@/types/states";
 
 import ButtonExp from "@/components/ButtonExp/ButtonExp";
 import CompanyExp from "@/components/CompanyExp/CompanyExp";
@@ -10,7 +11,7 @@ import tabService from "@/services/tabService";
 
 import "@/pages/TabsPage/TabsPage.css";
 
-const TabsPage = () => {
+const TabsPage = (): JSX.Element => {
   const [jobState, setJobState] = useState<JobState>({
     jobs: [],
     loading: false,
@@ -19,24 +20,24 @@ const TabsPage = () => {
 
   const job = jobState.activeJob;
 
-  const getJobs = async () => {
+  const getJobs = async (): Promise<void> => {
     const data = await tabService.getAll();
 
     setJobState((jobState) => ({
       ...jobState,
       loading: false,
       jobs: data,
-      activeJob: data?.length > 0 ? data[0] : null,
+      activeJob: data.length > 0 ? data[0]! : null,
     }));
   };
 
-  const handleCompany = (job: Tab) => {
+  const handleCompany = (job: Tab): void => {
     setJobState((jobState) => ({ ...jobState, activeJob: job }));
   };
 
   useEffect(() => {
     setJobState((jobState) => ({ ...jobState, loading: true }));
-    getJobs();
+    void getJobs();
   }, []);
 
   if (jobState.loading) {
@@ -60,18 +61,22 @@ const TabsPage = () => {
             <ButtonExp
               key={job.id}
               company={job.company}
-              isActive={job.id === jobState?.activeJob?.id}
-              handleActiveCompany={() => handleCompany(job)}
+              isActive={job.id === jobState.activeJob?.id}
+              handleActiveCompany={() => {
+                handleCompany(job);
+              }}
             ></ButtonExp>
           ))}
         </article>
 
-        <CompanyExp
-          company={job?.company}
-          title={job?.title}
-          dates={job?.dates}
-          duties={job?.duties}
-        ></CompanyExp>
+        {job && (
+          <CompanyExp
+            company={job.company}
+            title={job.title}
+            dates={job.dates}
+            duties={job.duties}
+          ></CompanyExp>
+        )}
       </section>
     </main>
   );

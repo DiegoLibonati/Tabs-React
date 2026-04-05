@@ -6,17 +6,17 @@ import CompanyExp from "@/components/CompanyExp/CompanyExp";
 
 import { mockTab } from "@tests/__mocks__/tabs.mock";
 
-type RenderComponent = {
+interface RenderComponent {
   container: HTMLElement;
   props: CompanyExpProps;
-};
+}
 
 const renderComponent = (overrides?: Partial<CompanyExpProps>): RenderComponent => {
   const props: CompanyExpProps = {
-    company: mockTab?.company,
-    title: mockTab?.title,
-    dates: mockTab?.dates,
-    duties: mockTab?.duties,
+    company: mockTab.company,
+    title: mockTab.title,
+    dates: mockTab.dates,
+    duties: mockTab.duties,
     ...overrides,
   };
 

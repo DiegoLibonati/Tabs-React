@@ -1,8 +1,9 @@
-import { ButtonExpProps } from "@/types/props";
+import type { JSX } from "react";
+import type { ButtonExpProps } from "@/types/props";
 
 import "@/components/ButtonExp/ButtonExp.css";
 
-const ButtonExp = ({ company, isActive, handleActiveCompany }: ButtonExpProps) => {
+const ButtonExp = ({ company, isActive, handleActiveCompany }: ButtonExpProps): JSX.Element => {
   return (
     <button
       className={`button-exp ${isActive && "button-exp--active"}`}

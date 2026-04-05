@@ -5,10 +5,10 @@ import type { ButtonExpProps } from "@/types/props";
 
 import ButtonExp from "@/components/ButtonExp/ButtonExp";
 
-type RenderComponent = {
+interface RenderComponent {
   container: HTMLElement;
   props: ButtonExpProps;
-};
+}
 
 const mockHandleActiveCompany = jest.fn();
 

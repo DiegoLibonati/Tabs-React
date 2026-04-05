@@ -12,7 +12,7 @@ describe("tabService", () => {
   it("should call fetch with the correct endpoint", async () => {
     mockedFetch.mockResolvedValueOnce({
       ok: true,
-      json: async () => mockTabs,
+      json: () => mockTabs,
     } as unknown as Response);
 
     await tabService.getAll();
@@ -23,7 +23,7 @@ describe("tabService", () => {
   it("should return the parsed Tab array on a successful response", async () => {
     mockedFetch.mockResolvedValueOnce({
       ok: true,
-      json: async () => mockTabs,
+      json: () => mockTabs,
     } as unknown as Response);
 
     const result = await tabService.getAll();

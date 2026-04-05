@@ -4,10 +4,10 @@ import type { DutieItemProps } from "@/types/props";
 
 import DutieItem from "@/components/DutieItem/DutieItem";
 
-type RenderComponent = {
+interface RenderComponent {
   container: HTMLElement;
   props: DutieItemProps;
-};
+}
 
 const renderComponent = (overrides?: Partial<DutieItemProps>): RenderComponent => {
   const props: DutieItemProps = {

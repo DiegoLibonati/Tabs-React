@@ -1,7 +1,7 @@
-import { Job } from "@src/entities/app";
+import type { Tab } from "@/types/app";
 
-export type JobState = {
-  jobs: Job[];
-  activeJob: Job | null;
+export interface JobState {
+  jobs: Tab[];
+  activeJob: Tab | null;
   loading: boolean;
-};
+}

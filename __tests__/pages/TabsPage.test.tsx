@@ -7,9 +7,9 @@ import tabService from "@/services/tabService";
 
 import { mockTabs, mockTab } from "@tests/__mocks__/tabs.mock";
 
-type RenderPage = {
+interface RenderPage {
   container: HTMLElement;
-};
+}
 
 jest.mock("@/services/tabService");
 
