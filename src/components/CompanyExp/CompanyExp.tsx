@@ -1,7 +1,7 @@
-import DutieItem from "@/components/DutieItem/DutieItem";
-
 import type { JSX } from "react";
 import type { CompanyExpProps } from "@/types/props";
+
+import DutieItem from "@/components/DutieItem/DutieItem";
 
 import "@/components/CompanyExp/CompanyExp.css";
 
